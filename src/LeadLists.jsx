@@ -12,7 +12,7 @@ const LeadLists = () => {
   useEffect(() => {
     const fetchLeads = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/getleads');
+        const response = await axios.get('https://lead-back.vercel.app/getleads');
         setLeads(response.data);
         setLoading(false);
       } catch (err) {
