@@ -18,7 +18,7 @@ const EditLeads = () => {
   const handleSubmit =  (e) => {
     e.preventDefault();
   
-       axios.put('http://localhost:5000/editleads/'+id, {email, name, number, product}).then(res=>{
+       axios.put('https://lead-back.vercel.app/editleads/'+id, {email, name, number, product}).then(res=>{
         if(res.data ==="Success"){
           window.location.href='/'
         }
@@ -29,7 +29,7 @@ const EditLeads = () => {
   useEffect(() => {
    
      
-    axios.get('http://localhost:5000/getleadsbyid'+id)
+    axios.get('https://lead-back.vercel.app/getleadsbyid'+id)
     .then(result=>{
       setEmail(result.data.email)
       setName(result.data.name)
@@ -41,7 +41,7 @@ const EditLeads = () => {
   }, []);
 
   const handleDelete = () => {
-    axios.delete('http://localhost:5000/deletebyid'+id).then(res=>{
+    axios.delete('https://lead-back.vercel.app/deletebyid'+id).then(res=>{
       if(res.data === "lead deleted"){
         navigate('/')
       }
