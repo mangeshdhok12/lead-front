@@ -14,7 +14,7 @@ const LeadForm = () => {
     e.preventDefault();
 
     try {
-      await axios.post('http://localhost:5000/leads', { email, name, number, product });
+      await axios.post('https://lead-back.vercel.app/leads', { email, name, number, product });
       navigate('/');
     } catch (err) {
       console.error(err);
